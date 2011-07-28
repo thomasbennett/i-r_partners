@@ -4,7 +4,7 @@
 <p class="museo quote font24">The GaugFlex brand is a suite of hardware and software products designed for simple, flexible and cost-effective data collections solutions.</p>
 
 <?php while(have_posts()): the_post(); ?>
-  <h2><?php the_title(); ?></h2>
+  <h2 class="h3"><?php the_title(); ?></h2>
 <?php endwhile; ?>
 
 <aside>
