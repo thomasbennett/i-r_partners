@@ -1,24 +1,43 @@
 jQuery(function($){
-  $('.cycle').cycle({
-    fx: 'fade',
-    timeout: '40000',
-    speed: 400,
-    pager: '#pager'
+  $('#donateMain input').each(function(){
+    var curval = $(this).val();
+    var altval = $(this).attr('alt');
+    if(curval == altval){
+      if( !$(this).hasClass('amount')){
+        $(this).val('');
+      }
+    }
   });
 
-  $('.partners').cycle({
-    fx: 'scrollHorz',
-    prev: '.prev',
-    next: '.next',
-    timeout: 5000
+  //loop through to find all search bars
+  $('#search').each(function(){
+    var curval = $(this).val();
+    var altval = $(this).attr('alt');
+    if (curval == "" || curval == altval) {
+      $(this).css({"color":"#999"});
+      $(this).val(altval);
+    } else {
+      $(this).css({"color":"#000"});
+    }
   });
 
-  $('.tablink').click(function(){
-    $('.tab').hide();
-    $('#tabs').find('li').removeClass('active-tab');
-    var id = $(this).attr('id');
-    var thisID = $('#' + id + '_content');
-    thisID.show();
-    $(this).addClass('active-tab');
+  // if focus, clear if necessary
+  $('#search').focus(function(){
+    var curval = $(this).val();
+    var altval = $(this).attr('alt');
+    $(this).css({"color":"#000"});
+    if(curval==altval){
+      $(this).val("");
+    }
+  });
+
+  // if blur, put default text back and gray if necessary
+  $('#search').blur(function(){
+    var curval = $(this).val();
+    var altval = $(this).attr('alt');
+    if(curval==""){
+      $(this).css({"color":"#999"});
+      $(this).val(altval);
+    }
   });
 });

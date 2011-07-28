@@ -51,10 +51,6 @@
       </nav>
     </header>
 
-    <aside>
-      <?php get_sidebar(); ?>
-    </aside>
- 
     <div id="content">
       <?php echo $content ?>
     </div>

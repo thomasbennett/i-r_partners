@@ -4,6 +4,10 @@
   body { background: url('<?php bloginfo('template_directory') ?>/images/<?php if(is_home()): echo "home-bg.jpg') center 460px no-repeat"; else: echo "inner-bg.jpg') center top repeat-x"; endif; ?>; }
 </style>
 
+<aside>
+  <?php get_sidebar(); ?>
+</aside>
+
 <div class="banner">
   <div class="banner-content">
     <h2 class="banner-headline museo border-bottom">&ldquo;...because lean always starts at the waste.&rdquo;</h2>
